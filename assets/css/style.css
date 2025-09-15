@@ -6,6 +6,11 @@
     padding:0;
 }
 
+header{
+    margin-bottom: 7vh;
+}
+
+/*index*/
 #case{
     height: 100vh;
     max-height: 100vh;
@@ -19,6 +24,7 @@
 #me{
     font-size: 7vh;
     font-weight: bold;
+    margin-bottom: 4vh;
 }
 #links{
     display: flex;
@@ -34,4 +40,17 @@
 
 #links > a:hover {
     box-shadow: 3px 3px 2px black ;
+}
+
+/*Bénévolat*/
+#entete-benevole{
+    height: auto;
+    margin-bottom: 7vh;
+    width: 100%;
+    max-width: 200vh;
+    text-align: center;
+}
+
+#innovlab{
+    margin-left: 1vh;
 }
