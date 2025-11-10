@@ -1,35 +1,112 @@
+@font-face {
+    font-family:Bebas_Neue ;
+    src: url(../font/Bebas_Neue/Bebas_Neue/BebasNeue-Regular.ttf);
+}
+
 *{
-    background-color: #324AB2;
     color : #FFF;
-    font-family: "Gill Sans", sans-serif;
+    font-family: Bebas_Neue;
     margin:0;
     padding:0;
 }
 
+body{
+    background-color: #324AB2;
+    overflow: auto; 
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none;  /* Internet Explorer et Edge Legacy */
+}
+
+body::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Opera */
+}
+
+
+
+/* ----------- TITRES ----------- */
 header{
     margin-bottom: 7vh;
 }
 
-/*index*/
-#case{
-    height: 100vh;
-    max-height: 100vh;
+.firstTitre, .titre{
+    font-size: 7vh;
+    font-weight: bold;
     width: 100%;
-    max-width: 200vh;
+    text-align: center;
+}
+
+.titre{
+    margin-bottom: 25vh;
+}
+
+/* ----------- BOUTON FLOTTANT ----------- */
+.btn-flottant {
+    position: fixed;        
+    top: 20px;          
+    right: 20px;           
+    background-color: #ff3da8;
+    /* background-color: #b0e0e6;  */
+    color: #fff;
+    border: none;
+    border-radius: 50%;     
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5rem;
+    text-decoration: none;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    transition: all 0.3s ease;
+    z-index: 1000;
+}
+
+.btn-flottant:hover {
+    background-color: #ff3da8;
+    transform: scale(1.1);
+}
+
+/* scroll bar */
+#scroll-progress {
+  position: fixed;
+  top: 0;
+  width: 0%;
+  height: 4px;
+  background: #b0e0e6;
+  z-index: 10000;
+}
+
+/* ----------- INTRO ----------- */
+#intro{  
+    height: 100vh;
+    width: 100%;
     align-items: center;
     justify-content: center;
     display: flex;
     flex-direction: column;
 }
-#me{
-    font-size: 7vh;
-    font-weight: bold;
-    margin-bottom: 4vh;
+
+#case{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
+
+.photo-profil {
+    width: 300px;            
+    height: 300px;           
+    object-fit: cover;       
+    border-radius: 50%;     
+    border: 4px solid white; 
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.4); 
+    margin-bottom: 2vh;     
+}
+
 #links{
+    margin-top: 4vh;
     display: flex;
     flex-direction: row;
-    text-decoration: none;
 }
 
 #links > a {
@@ -39,18 +116,204 @@ header{
 }
 
 #links > a:hover {
-    box-shadow: 3px 3px 2px black ;
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.4);
+    transition: box-shadow 0.3s ease; 
 }
 
-/*Bénévolat*/
-#entete-benevole{
-    height: auto;
-    margin-bottom: 7vh;
+/* ----------- A PROPOS ----------- */
+#aPropo{
+    min-height: 100vh;
     width: 100%;
-    max-width: 200vh;
+    display: flex;
+    flex-direction: column;
+    font-size: 2.5vh;
+    justify-content: flex-start;
+    padding: 5vh 0;
+    align-items: center;
+    box-sizing: border-box;
+}
+
+#wrapPrimaire1{
+    display: flex;
+    align-items: stretch; 
+    gap: 5vh; 
+    width: 80%;               
+    max-width: 180vh;  
+}
+
+.wrap1 {
+    background-color: #C71585;
+    flex: 1;
+    min-width: 250px;        
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    border-radius: 30px;
+    border : 3px solid #FFF;
+    padding: 2vh;
+}
+
+/* ----------- COMPÉTENCES ----------- */
+#competences{
+    min-height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    align-items: center;
+    gap: 4rem;
+    padding: 5vh 0;
+    box-sizing: border-box;
+    font-size: 2.5vh;
+}
+
+.wrapPrimaire2-right, .wrapPrimaire2-left {
+    display: flex;
+    align-items: center; 
+    justify-content: flex-start; 
+    gap: 2rem; 
+    width: 80%; 
+}
+
+.competence-right, .competence-left {
+    width: 20vw; 
+    aspect-ratio: 1 / 0.25; 
+    background-color: #C71585;
+    border-radius: 15px;
+    border: 3px solid #FFF;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    font-size: 1.2rem;
     text-align: center;
 }
 
-#innovlab{
-    margin-left: 1vh;
+#text-competence-right { flex: 1; text-align: left; }
+#text-competence-left { flex: 1; text-align: right; }
+
+/* ----------- EXPÉRIENCES ----------- */
+#experience {
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    padding: 5vh 0;
+    overflow: hidden;
+    font-size: 2.5vh;
+}
+
+#experience-nav {
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    margin-bottom: 20px;
+}
+
+#experience-nav button {
+    background-color: #C71585;
+    border: 2px solid #FFF;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 2vh;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+#experience-nav button:hover {
+    background-color: #ff3da8; 
+}
+
+/* Conteneur horizontal */
+.wrapPrimaire3 {
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    gap: 20vh;
+    width: 100%;
+    height: calc(100vh - 12vh); 
+    overflow-x: auto;
+    overflow-y: hidden;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    padding: 2vh;
+    margin-left: 10vh;
+    margin-right: 10vh;
+    box-sizing: border-box;
+    touch-action: pan-y;
+    -webkit-overflow-scrolling: touch;
+}
+
+/* Cartes d’expérience */
+.wrapPrimaire4 {
+    flex: 0 0 35vw;        
+    max-width: 420px;
+    height: 100%;
+    border-radius: 15px;
+    border: 2px solid #FFF;
+    background-color: #1c2b8c;
+    display: flex;
+    flex-direction: column;
+    scroll-snap-align: start;
+    overflow: hidden;
+    box-sizing: border-box;
+}
+
+/* Haut du bloc : 1/5 de la hauteur */
+.wrap21 {
+    height: 20%;
+    min-height: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #C71585;
+    font-size: 2.5vh;
+    border-bottom: 2px solid #FFF;
+    padding: 1vh;
+    box-sizing: border-box;
+}
+
+/* Bas du bloc : contenu */
+.wrap22 {
+    flex: 1;
+    padding: 2vh;
+    display: flex;
+    font-size: 2vh;
+    flex-direction: column;
+    gap: 3vh;
+}
+
+/* Barre de scroll (optionnelle) */
+.wrapPrimaire3::-webkit-scrollbar { height: 10px; }
+.wrapPrimaire3::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.15); border-radius: 6px; }
+
+/* ----------- BÉNÉVOLAT ----------- */
+#benevolat{
+    min-height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    font-size: 2.5vh;
+}
+
+/* -----------LOISIR----------------- */
+#loisir{
+    min-height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    font-size: 2.5vh;
+}
+
+/* ----------- RESPONSIVE ----------- */
+@media (max-width: 700px) {
+    .wrapPrimaire4 {
+        flex: 0 0 85vw;
+        max-width: none;
+    }
+    .wrap21 {
+        font-size: 3.5vh;
+    }
 }
