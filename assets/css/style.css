@@ -282,13 +282,13 @@ header{
 }
 /* ----------- EXPÉRIENCES ----------- */
 #experience {
-    height: 100vh;
+    min-height: 100vh;
     width: 100%;
     display: flex;
     flex-direction: column;
     box-sizing: border-box;
     padding: 5vh 0;
-    overflow: hidden;
+    overflow: visible;
     font-size: 2.5vh;
 }
 
@@ -318,34 +318,43 @@ header{
     display: flex;
     flex-direction: row;
     align-items: stretch;
-    gap: 20vh;
-    width: 100%;
-    height: calc(100vh - 12vh); 
-    overflow-x: auto;
-    overflow-y: hidden;
-    scroll-snap-type: x mandatory;
-    scroll-behavior: smooth;
+    gap: 3vh; /* Réduit pour que 3 cartes tiennent */
+    width: 90%; /* Augmenté pour avoir plus d'espace */
+    max-width: 1400px;
+    height: 60vh;
+    overflow: hidden; /* Masque les cartes en dehors */
     padding: 2vh;
-    margin-left: 10vh;
-    margin-right: 10vh;
+    margin: 0 auto; /* Centre le conteneur */
     box-sizing: border-box;
-    touch-action: pan-y;
-    -webkit-overflow-scrolling: touch;
+    position: relative;
+}
+.experience-track {
+    display: flex;
+    gap: 3vh;
+    transition: transform 0.5s ease;
+    height: 100%;
 }
 
 /* Cartes d’expérience */
 .wrapPrimaire4 {
-    flex: 0 0 35vw;        
-    max-width: 420px;
+    flex: 0 0 calc((100% - 6vh) / 3); /* 3 cartes + 2 gaps */
+    min-width: 280px;
+    max-width: 400px;
     height: 100%;
     border-radius: 15px;
     border: 2px solid #FFF;
     background-color: #1c2b8c;
     display: flex;
     flex-direction: column;
-    scroll-snap-align: start;
     overflow: hidden;
     box-sizing: border-box;
+}
+
+.wrapPrimaire4.active {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(0);
+    position: relative; /* AJOUT - la carte active reprend le flux */
 }
 
 /* Haut du bloc : 1/5 de la hauteur */
@@ -370,12 +379,8 @@ header{
     font-size: 2vh;
     flex-direction: column;
     gap: 3vh;
+    overflow-y: auto;
 }
-
-/* Barre de scroll (optionnelle) */
-.wrapPrimaire3::-webkit-scrollbar { height: 10px; }
-.wrapPrimaire3::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.15); border-radius: 6px; }
-
 
 /* ----------- BÉNÉVOLAT ----------- */
 #benevolat {
