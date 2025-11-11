@@ -36,7 +36,7 @@ header{
 }
 
 .titre{
-    margin-bottom: 25vh;
+    margin-bottom: 10vh;
 }
 
 /* ----------- BOUTON FLOTTANT ----------- */
@@ -45,7 +45,6 @@ header{
     top: 20px;          
     right: 20px;           
     background-color: #ff3da8;
-    /* background-color: #b0e0e6;  */
     color: #fff;
     border: none;
     border-radius: 50%;     
@@ -144,15 +143,94 @@ header{
 .wrap1 {
     background-color: #C71585;
     flex: 1;
-    min-width: 250px;        
+    min-width: 250px;
     display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
+    flex-direction: column;     
+    justify-content: center;    
     border-radius: 30px;
-    border : 3px solid #FFF;
+    border: 3px solid #FFF;
     padding: 2vh;
+    box-sizing: border-box;
 }
+
+#aPropo ul {
+    list-style-type: disc;     
+    margin-left: 3vh;          
+    padding-left: 2vh;         
+}
+
+#aPropo li {
+    margin-bottom: 1vh;        
+    text-align: left;          
+}
+
+/* FORMATIONS */
+#formation {
+            min-height: 100vh;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            font-size: 2.5vh;
+            justify-content: flex-start;
+            padding: 5vh 0;
+            align-items: center;
+            box-sizing: border-box;
+        }
+
+        #wrapFormation {
+            display: flex;
+            align-items: stretch;
+            gap: 5vh;
+            width: 80%;
+            max-width: 180vh;
+            flex-wrap: wrap;
+        }
+
+        .formation-card {
+            background-color: #C71585;
+            flex: 1;
+            min-width: 300px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            border-radius: 30px;
+            border: 3px solid #FFF;
+            padding: 3vh;
+            box-sizing: border-box;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .formation-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+        }
+
+        .formation-header {
+            font-size: 3vh;
+            font-weight: bold;
+            margin-bottom: 2vh;
+            border-bottom: 2px solid #FFF;
+            padding-bottom: 1vh;
+        }
+
+        .formation-periode {
+            font-size: 2.2vh;
+            margin-bottom: 1.5vh;
+            opacity: 0.9;
+        }
+
+        .formation-lieu {
+            font-size: 2vh;
+            margin-bottom: 2vh;
+            font-style: italic;
+        }
+
+        .formation-description {
+            font-size: 2vh;
+            line-height: 1.5;
+            flex-grow: 1;
+        }
+
 
 /* ----------- COMPÉTENCES ----------- */
 #competences{
@@ -185,14 +263,23 @@ header{
     display: flex;
     justify-content: center;
     align-items: center;
-    font-weight: bold;
     font-size: 1.2rem;
     text-align: center;
 }
 
-#text-competence-right { flex: 1; text-align: left; }
-#text-competence-left { flex: 1; text-align: right; }
 
+#text-competence-right, #text-competence-left {
+    flex: 1;
+    background-color: #1c2b8c;
+    border: 2px solid #FFF;
+    text-align: center;
+}
+
+.titreComp{
+    text-decoration:underline overline;
+    font-size: 3vh;
+    margin-bottom: 5vh;
+}
 /* ----------- EXPÉRIENCES ----------- */
 #experience {
     height: 100vh;
@@ -289,14 +376,101 @@ header{
 .wrapPrimaire3::-webkit-scrollbar { height: 10px; }
 .wrapPrimaire3::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.15); border-radius: 6px; }
 
+
 /* ----------- BÉNÉVOLAT ----------- */
-#benevolat{
-    min-height: 100vh;
+#benevolat {
+    height: 100vh;
     width: 100%;
     display: flex;
     flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    box-sizing: border-box;
     font-size: 2.5vh;
+    padding: 5vh 0;
 }
+
+.wrapBenevolat {
+    position: relative;
+    width: 100%;
+    height: 70vh;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #324AB2;
+}
+
+.benevolat-card {
+    position: absolute;
+    width: 60vw;
+    max-width: 700px;
+    height: 90%;
+    background-color: #1c2b8c;
+    border: 3px solid #FFF;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateX(0);
+    transition: opacity 0.5s ease, visibility 0.5s ease;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+    overflow: hidden;
+}
+
+/* Carte active (visible au centre) */
+.benevolat-card.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.benevolat-header {
+    background-color: #C71585;
+    padding: 2vh;
+    text-align: center;
+    font-size: 3vh;
+    border-bottom: 2px solid #FFF;
+    flex-shrink: 0;
+}
+
+.benevolat-body {
+    flex: 1;
+    padding: 3vh;
+    font-size: 2vh;
+    overflow-y: auto;
+}
+
+.benevolat-body > p {
+    text-decoration: underline;
+}
+.benevolat-body > ul {
+    margin-bottom: 3vh;
+    margin-top: 1vh;
+}
+
+#benevolat-nav {
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    margin-top: 4vh;
+}
+
+#benevolat-nav button {
+    background-color: #C71585;
+    border: 2px solid #FFF;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 2vh;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+#benevolat-nav button:hover {
+    background-color: #ff3da8;
+}
+
 
 /* -----------LOISIR----------------- */
 #loisir{
@@ -304,7 +478,13 @@ header{
     width: 100%;
     display: flex;
     flex-direction: column;
+    padding: 5vh 0;
     font-size: 2.5vh;
+}
+
+/* footer */
+footer{
+    text-align: center;
 }
 
 /* ----------- RESPONSIVE ----------- */
@@ -315,5 +495,34 @@ header{
     }
     .wrap21 {
         font-size: 3.5vh;
+    }
+}
+
+@media (max-width: 900px) {
+    #wrapPrimaire1 {
+        flex-direction: column;
+        align-items: stretch; /* reste valable */
+    }
+}
+
+@media (max-width: 900px) {
+    #wrapFormation {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .formation-card {
+        min-width: 250px;
+    }
+}
+
+@media (max-width: 700px) {
+    .titre {
+        font-size: 5vh;
+        margin-bottom: 8vh;
+    }
+
+    .formation-header {
+        font-size: 2.5vh;
     }
 }
