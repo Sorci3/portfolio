@@ -530,3 +530,381 @@ footer{
         font-size: 2.5vh;
     }
 }
+
+/* ========================================
+   AMÉLIORATIONS RESPONSIVE À AJOUTER
+   ======================================== */
+
+/* ----------- GÉNÉRAL ----------- */
+@media (max-width: 1200px) {
+    html {
+        font-size: 14px;
+    }
+    
+    .titre, .firstTitre {
+        font-size: 6vh;
+    }
+}
+
+/* ----------- TABLETTES ----------- */
+@media (max-width: 900px) {
+    /* Navigation links */
+    #links {
+        flex-direction: column;
+        align-items: center;
+        gap: 2vh;
+    }
+    
+    #links > a {
+        font-size: 2.5vh;
+        margin-right: 0;
+    }
+    
+    /* Photo de profil */
+    .photo-profil {
+        width: 250px;
+        height: 250px;
+    }
+    
+    /* Compétences */
+    .wrapPrimaire2-right, 
+    .wrapPrimaire2-left {
+        flex-direction: column;
+        align-items: center;
+        width: 90%;
+    }
+    
+    .competence-right, 
+    .competence-left {
+        width: 80vw;
+        max-width: 400px;
+    }
+    
+    #text-competence-right, 
+    #text-competence-left {
+        width: 80vw;
+        max-width: 400px;
+        padding: 2vh;
+    }
+    
+    /* Expériences */
+    .wrapPrimaire3 {
+        width: 95%;
+    }
+    
+    .wrapPrimaire4 {
+        flex: 0 0 calc((100% - 3vh) / 2);
+        min-width: 250px;
+    }
+}
+
+/* ----------- SMARTPHONES ----------- */
+@media (max-width: 700px) {
+    /* Titres */
+    .titre, .firstTitre {
+        font-size: 5vh;
+    }
+    
+    .titreComp {
+        font-size: 2.5vh;
+        margin-bottom: 3vh;
+    }
+    
+    /* Bouton flottant */
+    .btn-flottant {
+        width: 45px;
+        height: 45px;
+        font-size: 1.2rem;
+        top: 15px;
+        right: 15px;
+    }
+    
+    /* Photo de profil */
+    .photo-profil {
+        width: 200px;
+        height: 200px;
+    }
+    
+    /* Navigation */
+    #links {
+        margin-top: 3vh;
+    }
+    
+    #links > a {
+        font-size: 2.2vh;
+        padding: 1vh;
+    }
+    
+    /* À propos */
+    #wrapPrimaire1 {
+        width: 90%;
+        gap: 3vh;
+    }
+    
+    .wrap1 {
+        min-width: 200px;
+        padding: 2vh;
+        font-size: 2vh;
+    }
+    
+    /* Formations */
+    #wrapFormation {
+        width: 90%;
+        gap: 3vh;
+    }
+    
+    .formation-card {
+        padding: 2vh;
+    }
+    
+    .formation-header {
+        font-size: 2.5vh;
+    }
+    
+    .formation-periode,
+    .formation-lieu,
+    .formation-description {
+        font-size: 1.8vh;
+    }
+    
+    /* Compétences */
+    #competences {
+        gap: 3rem;
+        font-size: 2vh;
+    }
+    
+    .competence-right, 
+    .competence-left {
+        width: 85vw;
+        font-size: 2vh;
+    }
+    
+    #text-competence-right, 
+    #text-competence-left {
+        width: 85vw;
+        font-size: 1.8vh;
+        padding: 1.5vh;
+    }
+    
+    /* Expériences */
+    .wrapPrimaire3 {
+        width: 95%;
+        height: 65vh;
+    }
+    
+    .wrapPrimaire4 {
+        flex: 0 0 85vw;
+        min-width: 280px;
+    }
+    
+    .wrap21 {
+        font-size: 2.2vh;
+        min-height: 70px;
+        padding: 1vh;
+    }
+    
+    .wrap22 {
+        font-size: 1.8vh;
+        padding: 1.5vh;
+    }
+    
+    #experience-nav button {
+        padding: 8px 16px;
+        font-size: 1.8vh;
+    }
+    
+    /* Bénévolat */
+    .benevolat-card {
+        width: 85vw;
+        height: 85%;
+    }
+    
+    .benevolat-header {
+        font-size: 2.5vh;
+        padding: 1.5vh;
+    }
+    
+    .benevolat-body {
+        padding: 2vh;
+        font-size: 1.8vh;
+    }
+    
+    #benevolat-nav button {
+        padding: 8px 16px;
+        font-size: 1.8vh;
+        gap: 30px;
+    }
+}
+
+/* ----------- PETITS SMARTPHONES ----------- */
+@media (max-width: 480px) {
+    /* Titres */
+    .titre, .firstTitre {
+        font-size: 4vh;
+        margin-bottom: 5vh;
+    }
+    
+    /* Photo de profil */
+    .photo-profil {
+        width: 150px;
+        height: 150px;
+    }
+    
+    /* Navigation */
+    #links > a {
+        font-size: 2vh;
+    }
+    
+    /* Sections */
+    #aPropo,
+    #formation,
+    #competences,
+    #experience {
+        font-size: 1.8vh;
+    }
+    
+    /* Compétences */
+    .competence-right, 
+    .competence-left {
+        width: 90vw;
+        aspect-ratio: 1 / 0.3;
+        font-size: 1.8vh;
+    }
+    
+    #text-competence-right, 
+    #text-competence-left {
+        width: 90vw;
+        font-size: 1.6vh;
+    }
+    
+    /* Expériences */
+    .wrapPrimaire4 {
+        flex: 0 0 90vw;
+    }
+    
+    .wrap21 {
+        font-size: 2vh;
+    }
+    
+    .wrap22 {
+        font-size: 1.6vh;
+    }
+    
+    /* Bénévolat */
+    .benevolat-card {
+        width: 90vw;
+    }
+    
+    .benevolat-header {
+        font-size: 2.2vh;
+    }
+    
+    .benevolat-body {
+        font-size: 1.6vh;
+    }
+    
+    /* Boutons navigation */
+    #experience-nav,
+    #benevolat-nav {
+        gap: 20px;
+    }
+    
+    #experience-nav button,
+    #benevolat-nav button {
+        padding: 6px 12px;
+        font-size: 1.6vh;
+    }
+}
+
+/* ----------- MODE PAYSAGE MOBILE ----------- */
+@media (max-height: 500px) and (orientation: landscape) {
+    #intro {
+        height: auto;
+        min-height: 100vh;
+        padding: 5vh 0;
+    }
+    
+    .photo-profil {
+        width: 150px;
+        height: 150px;
+    }
+    
+    .firstTitre {
+        font-size: 4vh;
+    }
+    
+    #links {
+        flex-direction: row;
+        flex-wrap: wrap;
+        margin-top: 2vh;
+    }
+    
+    .wrapPrimaire3 {
+        height: 80vh;
+    }
+}
+
+/* ----------- TRÈS GRANDS ÉCRANS ----------- */
+@media (min-width: 1920px) {
+    .wrapPrimaire3 {
+        max-width: 1600px;
+    }
+    
+    #wrapPrimaire1,
+    #wrapFormation {
+        max-width: 1600px;
+    }
+}
+
+/* ----------- ACCESSIBILITÉ ----------- */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
+/* ----------- AMÉLIORATION DES LISTES ----------- */
+@media (max-width: 700px) {
+    #aPropo ul,
+    .wrap22 ul,
+    .benevolat-body ul {
+        margin-left: 2vh;
+        padding-left: 1vh;
+    }
+    
+    #aPropo li,
+    .wrap22 li,
+    .benevolat-body li {
+        margin-bottom: 0.5vh;
+        font-size: 1.8vh;
+    }
+}
+
+/* ----------- AMÉLIORATION DU SCROLL ----------- */
+@media (max-width: 700px) {
+    .wrap22,
+    .benevolat-body {
+        scrollbar-width: thin;
+        scrollbar-color: #C71585 #1c2b8c;
+    }
+    
+    .wrap22::-webkit-scrollbar,
+    .benevolat-body::-webkit-scrollbar {
+        width: 6px;
+    }
+    
+    .wrap22::-webkit-scrollbar-track,
+    .benevolat-body::-webkit-scrollbar-track {
+        background: #1c2b8c;
+    }
+    
+    .wrap22::-webkit-scrollbar-thumb,
+    .benevolat-body::-webkit-scrollbar-thumb {
+        background: #C71585;
+        border-radius: 3px;
+    }
+}
